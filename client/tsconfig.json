@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "jsx": "react-jsxdev",
+        "lib": [ "ES2015", "DOM" ],
+        "esModuleInterop": true,
+        "target": "es5"
+    }
+}
