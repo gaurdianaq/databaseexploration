@@ -22,9 +22,15 @@
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
+                <version>4.2.2</version>
                 <configuration>
-                    <propertyFile>src/main/resources/liquibase/liquibase.properties</propertyFile>
+                    <changeLogFile>src/main/resources/liquibase/dbchangelog.xml</changeLogFile>
+                    <driver>org.mariadb.jdbc.Driver</driver>
+                    <url>jdbc:mariadb://localhost:3306/fantasyinventory</url>
+                    <username>root</username>
+                    <password>gaurdianAQ#123</password>
                 </configuration>
+
                 <executions>
                     <execution>
                         <phase>process-resources</phase>
@@ -67,7 +73,7 @@
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
-            <version>4.2.0</version>
+            <version>4.2.2</version>
         </dependency>
     </dependencies>
 </project>
