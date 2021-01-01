@@ -1,6 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd   http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <include file="./Weapons/weapons.xml" relativeToChangelogFile="true" />
+    <include file="./Items/items.xml" relativeToChangelogFile="true" />
+    <include file="./Items/Weapons/weapons.xml" relativeToChangelogFile="true" />
+    <include file="./Items/Weapons/weapon_stats.xml" relativeToChangelogFile="true" />
+    <include file="./Items/Weapons/weapon_types.xml" relativeToChangelogFile="true" />
+    <include file="./Items/Weapons/weapon_requirements.xml" relativeToChangelogFile="true" />
+    <include file="./Items/Armour/armour.xml" relativeToChangelogFile="true" />
+    <include file="./Items/Armour/armour_classifications.xml" relativeToChangelogFile="true" />
+    <include file="./Items/Armour/armour_stats.xml" relativeToChangelogFile="true" />
+    <include file="./Items/Armour/armour_types.xml" relativeToChangelogFile="true" />
+    <include file="./Characters/heros.xml" relativeToChangelogFile="true" />
 
 </databaseChangeLog>

@@ -18,7 +18,7 @@
     </changeSet>
 
     <changeSet id="3" author="gaurdianAQ">
-        <insert tableName="weapon_typ3s">
+        <insert tableName="weapon_types">
             <column name="name">
                 Greatsword
             </column>
@@ -44,7 +44,7 @@
     <changeSet id="6" author="gaurdianAQ">
         <insert tableName="weapon_types">
             <column name="name">
-                Ultra Greatsword
+                Pyromancy Flame
             </column>
         </insert>
     </changeSet>
