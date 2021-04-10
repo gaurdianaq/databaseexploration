@@ -3,13 +3,22 @@
 
     <changeSet author="gaurdianAQ" id="1">
         <createTable tableName="items">
-            <column name="id" type="INT" autoIncrement="true">
+            <column name="id" type="INT UNSIGNED" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false" />
             </column>
-            <column name="owner" type="INT">
+            <column name="name" type="VARCHAR(50)">
                 <constraints nullable="false" />
             </column>
-            <column name="durability" type="FLOAT">
+            <column name="weight" type="FLOAT">
+                <constraints nullable="false" />
+            </column>
+            <column name="owned_by" type="INT UNSIGNED">
+                <constraints nullable="true" foreignKeyName="fk_character" references="characters(id)"/>
+            </column>
+            <column name="possessed_by" type="INT UNSIGNED">
+                <constraints nullable="true" foreignKeyName="fk_character" references="characters(id)"/>
+            </column>
+            <column name="value" type="INT">
                 <constraints nullable="false" />
             </column>
         </createTable>

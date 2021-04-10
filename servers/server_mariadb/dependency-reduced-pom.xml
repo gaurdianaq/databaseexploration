@@ -49,7 +49,7 @@
           <transformers>
             <transformer>
               <manifestEntries>
-                <Main-Class>org.gaurdianaq.mariadbserver.Main</Main-Class>
+                <Main-Class>org.gaurdianaq.mariadbserver.App</Main-Class>
               </manifestEntries>
             </transformer>
           </transformers>
