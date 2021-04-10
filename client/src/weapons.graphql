@@ -1,15 +1,6 @@
 query getAllWeapons {
-    getAllWeapons {
+    getAllCharacters {
         __typename
         name
-        weight
-        durability
-        owned_by
-        possessed_by
-        type
-        stats
-        requirements
-        trade_history
-        repair_history
     }
 }
