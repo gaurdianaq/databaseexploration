@@ -12,6 +12,38 @@
 
         <plugins>
             <plugin>
+                <groupId>io.github.kobylynskyi</groupId>
+                <artifactId>graphql-codegen-maven-plugin</artifactId>
+                <version>5.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <!-- all config options:
+                            https://github.com/kobylynskyi/graphql-java-codegen/blob/master/docs/codegen-options.md
+                            -->
+                            <graphqlSchemas>
+                                <rootDir>${project.basedir}/../../graphql_schema</rootDir>
+                                <includePattern>.*\.graphql</includePattern>
+                            </graphqlSchemas>
+                            <outputDir>${project.build.directory}/generated-sources/graphql</outputDir>
+                            <packageName>org.gaurdianaq.mariadbserver</packageName>
+                            <customTypesMapping>
+                                <DateTime>java.util.Date</DateTime>
+                                <Price.amount>java.math.BigDecimal</Price.amount>
+                            </customTypesMapping>
+                            <customAnnotationsMapping>
+                                <EpochMillis>
+                                    <annotation>com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.example.json.EpochMillisScalarDeserializer.class)</annotation>
+                                </EpochMillis>
+                            </customAnnotationsMapping>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
@@ -48,7 +80,7 @@
                     <transformers>
                         <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                             <manifestEntries>
-                                <Main-Class>org.gaurdianaq.mariadbserver.Main</Main-Class>
+                                <Main-Class>org.gaurdianaq.mariadbserver.App</Main-Class>
                             </manifestEntries>
                         </transformer>
                     </transformers>
@@ -74,6 +106,21 @@
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
             <version>4.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-jetty-http</artifactId>
+            <version>2.32</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>2.32</version>
+        </dependency>
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-java</artifactId>
+            <version>16.2</version>
         </dependency>
     </dependencies>
 </project>
