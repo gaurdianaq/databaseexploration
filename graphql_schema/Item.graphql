@@ -18,7 +18,7 @@ type Repair {
     blacksmith: BlackSmith!
 }
 
-type Weapon implements Item, Repairable {
+type Weapon implements Item & Repairable {
     id: ID!
     name: String!
     weight: Float!
@@ -75,7 +75,7 @@ type WeaponRequirements {
     faith: Int!
 }
 
-type Armour implements Item, Repairable {
+type Armour implements Item & Repairable {
     id: ID!
     name: String!
     weight: Float!

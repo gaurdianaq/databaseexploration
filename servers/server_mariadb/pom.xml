@@ -29,7 +29,7 @@
                                 <includePattern>.*\.graphql</includePattern>
                             </graphqlSchemas>
                             <outputDir>${project.build.directory}/generated-sources/graphql</outputDir>
-                            <packageName>org.gaurdianaq.mariadbserver</packageName>
+                            <packageName>org.gaurdianaq.mariadbserver.graphql</packageName>
                             <customTypesMapping>
                                 <DateTime>java.util.Date</DateTime>
                                 <Price.amount>java.math.BigDecimal</Price.amount>

@@ -148,7 +148,7 @@ export type Repair = {
   blacksmith: BlackSmith;
 };
 
-export type Weapon = Item & {
+export type Weapon = Item & Repairable & {
   __typename: 'Weapon';
   id: Scalars['ID'];
   name: Scalars['String'];
@@ -208,7 +208,7 @@ export type WeaponRequirements = {
   faith: Scalars['Int'];
 };
 
-export type Armour = Item & {
+export type Armour = Item & Repairable & {
   __typename: 'Armour';
   id: Scalars['ID'];
   name: Scalars['String'];
