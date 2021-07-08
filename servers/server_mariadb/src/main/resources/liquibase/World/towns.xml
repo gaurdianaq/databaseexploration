@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd   http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="1" author="gaurdianAQ">
+        <createTable tableName="towns">
+            <column name="location_id" type="INT UNSIGNED">
+                <constraints primaryKey="true" nullable="false" foreignKeyName="fk_location_id" references="locations(id)"/>
+            </column>
+            <column name="population" type="INT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="controlling_faction" type="VARCHAR(50)">
+                <constraints nullable="false" foreignKeyName="fk_controlling_faction" references="factions(name)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

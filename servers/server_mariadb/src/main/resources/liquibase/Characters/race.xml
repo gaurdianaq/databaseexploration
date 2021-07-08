@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd   http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="1" author="gaurdianAQ">
+        <createTable tableName="races">
+            <column name="name" type="VARCHAR(50)">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="gaurdianAQ">
+        <insert tableName="races">
+            <column name="name">Human</column>
+        </insert>
+        <insert tableName="races">
+            <column name="name">Elf</column>
+        </insert>
+        <insert tableName="races">
+            <column name="name">DarkElf</column>
+        </insert>
+        <insert tableName="races">
+            <column name="name">Dwarf</column>
+        </insert>
+        <insert tableName="races">
+            <column name="name">Orc</column>
+        </insert>
+        <insert tableName="races">
+            <column name="name">Skeleton</column>
+        </insert>
+        <insert tableName="races">
+            <column name="name">Vampire</column>
+        </insert>
+        <insert tableName="races">
+            <column name="name">Dragonian</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
