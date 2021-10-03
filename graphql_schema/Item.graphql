@@ -82,7 +82,7 @@ type Armour implements Item & Repairable {
     durability: Int!
     owned_by: Character
     posessed_by: Character
-    class: ArmourClassification
+    armour_class: ArmourClassification
     type: ArmourType
     stats: ArmourStats
     value: Int!

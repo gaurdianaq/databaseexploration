@@ -4,8 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/client/client.iml" filepath="$PROJECT_DIR$/client/client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/databaseexploration.iml" filepath="$PROJECT_DIR$/.idea/databaseexploration.iml" />
-      <module fileurl="file://$PROJECT_DIR$/servers/server_mariadb/server.iml" filepath="$PROJECT_DIR$/servers/server_mariadb/server.iml" />
-      <module fileurl="file://$PROJECT_DIR/graphql_schema/schema.iml" filepath="$PROJECT_DIR$/graphql_schema/schema.iml" />
+      <module fileurl="file://$APPLICATION_HOME_DIR$/jbr/bin/$PROJECT_DIR/graphql_schema/schema.iml" filepath="$APPLICATION_HOME_DIR$/jbr/bin/$PROJECT_DIR/graphql_schema/schema.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servers/server-common/server-common.iml" filepath="$PROJECT_DIR$/servers/server-common/server-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servers/server-mariadb/server-mariadb.iml" filepath="$PROJECT_DIR$/servers/server-mariadb/server-mariadb.iml" />
     </modules>
   </component>
 </project>

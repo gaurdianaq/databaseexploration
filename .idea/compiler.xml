@@ -6,11 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="server" />
+        <module name="server-common" />
+        <module name="server-mariadb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="server" target="14" />
+      <module name="server-common" target="14" />
+      <module name="server-mariadb" target="14" />
+      <module name="server_mariadb" target="14" />
     </bytecodeTargetLevel>
   </component>
 </project>

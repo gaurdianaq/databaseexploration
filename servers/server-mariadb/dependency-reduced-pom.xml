@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.gaurdianaq.mariadbserver</groupId>
-  <artifactId>server</artifactId>
+  <artifactId>server-mariadb</artifactId>
   <version>1.0-SNAPSHOT</version>
   <build>
-    <finalName>server</finalName>
+    <finalName>${project.artifactId}</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -29,7 +29,7 @@
         <configuration>
           <changeLogFile>src/main/resources/liquibase/dbchangelog.xml</changeLogFile>
           <driver>org.mariadb.jdbc.Driver</driver>
-          <url>jdbc:mariadb://localhost:3306/fantasyinventory</url>
+          <url>jdbc:mariadb://localhost:3308/fantasyinventory</url>
           <username>root</username>
           <password>gaurdianAQ#123</password>
         </configuration>
