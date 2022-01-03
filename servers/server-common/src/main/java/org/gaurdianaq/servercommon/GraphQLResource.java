@@ -40,7 +40,7 @@ public class GraphQLResource {
 		this.typeRegistry.merge(this.schemaParser.parse(GraphQLResource.class.getResourceAsStream("Item.graphql")));
 		this.typeRegistry.merge(this.schemaParser.parse(GraphQLResource.class.getResourceAsStream("World.graphql")));
 		this.typeRegistry.merge(this.schemaParser.parse(GraphQLResource.class.getResourceAsStream("Schema.graphql")));
-		graphQL = GraphQL.newGraphQL(schemaGenerator.makeExecutableSchema(this.typeRegistry,));
+		//graphQL = GraphQL.newGraphQL(schemaGenerator.makeExecutableSchema(this.typeRegistry,));
 	}
 
 	@GET

@@ -20,7 +20,33 @@
             <column name="current_location" type="INT UNSIGNED">
                 <constraints nullable="false" foreignKeyName="fk_current_location" references="locations(id)"/>
             </column>
-            <!-- TODO Finish adding columns to this-->
+            <column name="home" type="INT UNSIGNED">
+                <constraints nullable="false" foreignKeyName="fk_home" references="homes(id)"/>
+            </column>
+            <column name="level" type="INT UNSIGNED" defaultValue="1">
+                <constraints nullable="false"/>
+            </column>
+            <column name="strength" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dexterity" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="intelligence" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="faith" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vitality" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="endurance" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="inventory_id" type="UNSIGNED INT">
+                <constraints nullable="false" foreignKeyName="fk_inventory" references="inventories(id)"/>
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

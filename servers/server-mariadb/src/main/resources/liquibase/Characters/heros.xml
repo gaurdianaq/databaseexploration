@@ -6,36 +6,6 @@
             <column name="id" type="INT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false" />
             </column>
-            <column name="name" type="VARCHAR(255)">
-                <constraints nullable="false" />
-            </column>
-            <column name="level" type="INT">
-                <constraints nullable="false" />
-            </column>
-            <column name="current_exp" type="INT">
-                <constraints nullable="false" />
-            </column>
-            <column name="exp_needed_level" type="INT">
-                <constraints nullable="false" />
-            </column>
-            <column name="strength" type="INT">
-                <constraints nullable="false" />
-            </column>
-            <column name="dexterity" type="INT">
-                <constraints nullable="false" />
-            </column>
-            <column name="faith" type="INT">
-                <constraints nullable="false" />
-            </column>
-            <column name="intelligence" type="INT">
-                <constraints nullable="false" />
-            </column>
-            <column name="vitality" type="INT">
-                <constraints nullable="false" />
-            </column>
-            <column name="endurance" type="INT">
-                <constraints nullable="false" />
-            </column>
         </createTable>
     </changeSet>
 

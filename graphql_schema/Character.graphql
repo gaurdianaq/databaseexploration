@@ -14,7 +14,7 @@ interface Character {
     faith: Int!
     vitality: Int!
     endurance: Int!
-    inventory: [Item!]
+    inventory: Inventory!
 
 }
 input CharacterInput {
@@ -50,7 +50,7 @@ type Hero implements Character {
     faith: Int!
     vitality: Int!
     endurance: Int!
-    inventory: [Item!]
+    inventory: Inventory!
 }
 
 type BlackSmith implements Character {
@@ -70,7 +70,8 @@ type BlackSmith implements Character {
     faith: Int!
     vitality: Int!
     endurance: Int!
-    inventory: [Item!]
+    inventory: Inventory!
+    repair_history: [Repair!]
 }
 
 type Merchant implements Character {
@@ -90,7 +91,7 @@ type Merchant implements Character {
     faith: Int!
     vitality: Int!
     endurance: Int!
-    inventory: [Item!]
+    inventory: Inventory!
 }
 
 enum Race {

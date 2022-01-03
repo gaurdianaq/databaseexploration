@@ -13,8 +13,14 @@ interface Repairable {
     repair_history: [Repair!]!
 }
 
+type Inventory {
+    items: [Item!]!
+    max_size: Int!
+}
+
 type Repair {
     cost: Transaction!
+    item: Repairable!
     blacksmith: BlackSmith!
 }
 

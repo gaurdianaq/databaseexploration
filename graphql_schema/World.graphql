@@ -4,12 +4,14 @@ type Coordinates {
 }
 
 interface Location {
-    name: String!
+    id: ID!
+    name: String
     coordinates: Coordinates!
     people: [Character!]
 }
 
 type Town implements Location {
+    id: ID!
     name: String!
     coordinates: Coordinates!
     people: [Character!]!
@@ -19,13 +21,15 @@ type Town implements Location {
 }
 
 type Cave implements Location {
-    name: String!
+    id: ID!
+    name: String
     coordinates: Coordinates!
     people: [Character!]
 }
 
 type Forest implements Location {
-    name: String!
+    id: ID!
+    name: String
     coordinates: Coordinates!
     people: [Character!]
 }
@@ -33,33 +37,35 @@ type Forest implements Location {
 interface Property {
     id: ID!
     location: Location!
-    inventory: [Item!]!
+    inventory: Inventory!
     owners: [Character!]
-    occupants: [Character!]
+    #occupants: [Character!]
 }
 
 type Home implements Property {
     id: ID!
     location: Location!
-    inventory: [Item!]!
+    inventory: Inventory!
     owners: [Character!]
-    occupants: [Character!]
+    beds: Int!
+    bathrooms: Int!
+    #occupants: [Character!]
 }
 
 type Forge implements Property {
     id: ID!
     location: Location!
-    inventory: [Item!]!
+    inventory: Inventory!
     owners: [Character!]
-    occupants: [Character!]
+    #occupants: [Character!]
 }
 
 type Store implements Property {
     id: ID!
     location: Location!
-    inventory: [Item!]!
+    inventory: Inventory!
     owners: [Character!]
-    occupants: [Character!]
+    #occupants: [Character!]
 }
 
 type Money {

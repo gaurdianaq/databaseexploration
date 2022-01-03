@@ -23,5 +23,18 @@
             </column>
         </createTable>
     </changeSet>
+    <changeSet id="2" author="gaurdianAQ">
+        <createTable tableName="inventories">
+            <column name="id" type="INT UNSIGNED" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="current_size" type="INT UNSIGNED" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="max_size" type="INT UNSIGNED" defaultValue="10">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
 
 </databaseChangeLog>
