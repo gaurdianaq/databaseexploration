@@ -1,0 +1,6 @@
+query getAllWeapons {
+    getAllCharacters {
+        __typename
+        name
+    }
+}

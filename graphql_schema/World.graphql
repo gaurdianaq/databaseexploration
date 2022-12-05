@@ -1,0 +1,81 @@
+type Coordinates {
+    x: Float!
+    y: Float!
+}
+
+interface Location {
+    id: ID!
+    name: String
+    coordinates: Coordinates!
+    people: [Character!]
+}
+
+type Town implements Location {
+    id: ID!
+    name: String!
+    coordinates: Coordinates!
+    people: [Character!]!
+    population: Int
+    controllingFaction: Faction!
+    residents: [Character!]!
+}
+
+type Cave implements Location {
+    id: ID!
+    name: String
+    coordinates: Coordinates!
+    people: [Character!]
+}
+
+type Forest implements Location {
+    id: ID!
+    name: String
+    coordinates: Coordinates!
+    people: [Character!]
+}
+
+interface Property {
+    id: ID!
+    location: Location!
+    inventory: Inventory!
+    owners: [Character!]
+    #occupants: [Character!]
+}
+
+type Home implements Property {
+    id: ID!
+    location: Location!
+    inventory: Inventory!
+    owners: [Character!]
+    beds: Int!
+    bathrooms: Int!
+    #occupants: [Character!]
+}
+
+type Forge implements Property {
+    id: ID!
+    location: Location!
+    inventory: Inventory!
+    owners: [Character!]
+    #occupants: [Character!]
+}
+
+type Store implements Property {
+    id: ID!
+    location: Location!
+    inventory: Inventory!
+    owners: [Character!]
+    #occupants: [Character!]
+}
+
+type Money {
+    value: Int!
+}
+
+union Transaction = Money | Weapon
+
+type Trade {
+    cost: Transaction!
+    buyer: Character!
+    seller: Character!
+}

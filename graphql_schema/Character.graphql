@@ -1,0 +1,113 @@
+interface Character {
+    id: ID!
+    name: String!
+    race: Race!
+    money: Int!
+    isAlive: Boolean!
+    faction: Faction!
+    current_location: Location!
+    home: Home!
+    level: Int!
+    strength: Int!
+    dexterity: Int!
+    intelligence: Int!
+    faith: Int!
+    vitality: Int!
+    endurance: Int!
+    inventory: Inventory!
+
+}
+input CharacterInput {
+    name: String!
+    race: Race!
+    money: Int!
+    isAlive: Boolean!
+    faction: Faction!
+    current_location_id: ID!
+    home_id: ID!
+    level: Int!
+    strength: Int!
+    dexterity: Int!
+    intelligence: Int!
+    faith: Int!
+    vitality: Int!
+    endurance: Int!
+}
+
+type Hero implements Character {
+    id: ID!
+    name: String!
+    race: Race!
+    money: Int!
+    isAlive: Boolean!
+    faction: Faction!
+    current_location: Location!
+    home: Home!
+    level: Int!
+    strength: Int!
+    dexterity: Int!
+    intelligence: Int!
+    faith: Int!
+    vitality: Int!
+    endurance: Int!
+    inventory: Inventory!
+}
+
+type BlackSmith implements Character {
+    id: ID!
+    name: String!
+    race: Race!
+    money: Int!
+    isAlive: Boolean!
+    faction: Faction!
+    current_location: Location!
+    home: Home!
+    forge: Forge!
+    level: Int!
+    strength: Int!
+    dexterity: Int!
+    intelligence: Int!
+    faith: Int!
+    vitality: Int!
+    endurance: Int!
+    inventory: Inventory!
+    repair_history: [Repair!]
+}
+
+type Merchant implements Character {
+    id: ID!
+    name: String!
+    race: Race!
+    money: Int!
+    isAlive: Boolean!
+    faction: Faction!
+    current_location: Location!
+    home: Home!
+    store: Store!
+    level: Int!
+    strength: Int!
+    dexterity: Int!
+    intelligence: Int!
+    faith: Int!
+    vitality: Int!
+    endurance: Int!
+    inventory: Inventory!
+}
+
+enum Race {
+    Human,
+    Elf,
+    DarkElf,
+    Dwarf,
+    Orc,
+    Skeleton,
+    Vampire,
+    Dragonian
+}
+
+enum Faction {
+    Light,
+    Dark,
+    Chaos,
+    Balance
+}

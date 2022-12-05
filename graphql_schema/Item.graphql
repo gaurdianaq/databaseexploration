@@ -1,0 +1,125 @@
+interface Item {
+    id: ID!
+    name: String!
+    weight: Float!
+    owned_by: Character
+    posessed_by: Character
+    value: Int!
+    trade_history: [Trade!]!
+}
+
+interface Repairable {
+    durability: Int!
+    repair_history: [Repair!]!
+}
+
+type Inventory {
+    items: [Item!]!
+    max_size: Int!
+}
+
+type Repair {
+    cost: Transaction!
+    item: Repairable!
+    blacksmith: BlackSmith!
+}
+
+type Weapon implements Item & Repairable {
+    id: ID!
+    name: String!
+    weight: Float!
+    durability: Int!
+    owned_by: Character
+    posessed_by: Character
+    type: WeaponType!
+    stats: WeaponStats!
+    requirements: WeaponRequirements!
+    value: Int!
+    trade_history: [Trade!]!
+    repair_history: [Repair!]!
+}
+
+enum WeaponType {
+    StraightSword,
+    CurvedSword,
+    CurvedGreatSword,
+    Hammer,
+    GreatHammer,
+    GreatSword,
+    UltraGreatSword,
+    Bow,
+    Crossbow,
+    GreatBow,
+    Shield,
+    GreatShield,
+    Dagger,
+    Staff,
+    Talisman,
+    Axe,
+    GreatAxe,
+    Spear,
+    Halberd
+    Whip,
+    Katana
+}
+
+type WeaponStats {
+    slash_dmg: Int!
+    piercing_dmg: Int!
+    blunt_dmg: Int!
+    fire_dmg: Int!
+    dark_dmg: Int!
+    divine_dmg: Int!
+    lightning_dmg: Int!
+    magic_dmg: Int!
+}
+
+type WeaponRequirements {
+    strength: Int!
+    dexterity: Int!
+    intelligence: Int!
+    faith: Int!
+}
+
+type Armour implements Item & Repairable {
+    id: ID!
+    name: String!
+    weight: Float!
+    durability: Int!
+    owned_by: Character
+    posessed_by: Character
+    armour_class: ArmourClassification
+    type: ArmourType
+    stats: ArmourStats
+    value: Int!
+    trade_history: [Trade!]!
+    repair_history: [Repair!]!
+}
+
+type ArmourStats {
+    slash_res: Int!
+    piercing_res: Int!
+    blunt_res: Int!
+    fire_res: Int!
+    dark_res: Int!
+    divine_res: Int!
+    lightning_res: Int!
+    magic_res: Int!
+    bleed_res: Int!
+    poison_res: Int!
+    curse_res: Int!
+}
+
+enum ArmourClassification {
+    Light,
+    Medium,
+    Heavy
+}
+
+enum ArmourType {
+    Helmet,
+    Breastplate,
+    Gauntlets,
+    Greaves,
+    Boots
+}

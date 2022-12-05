@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd   http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="1" author="gaurdianAQ">
+        <createTable tableName="characters">
+            <column name="id" type="INT UNSIGNED" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="race" type="VARCHAR(50)">
+                <constraints nullable="false" foreignKeyName="fk_race" references="races(name)"/>
+            </column>
+            <column name="money" type="INT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="isAlive" type="BOOLEAN" defaultValue="TRUE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="faction" type="VARCHAR(50)">
+                <constraints nullable="false" foreignKeyName="fk_faction" references="factions(name)"/>
+            </column>
+            <column name="current_location" type="INT UNSIGNED">
+                <constraints nullable="false" foreignKeyName="fk_current_location" references="locations(id)"/>
+            </column>
+            <column name="home" type="INT UNSIGNED">
+                <constraints nullable="false" foreignKeyName="fk_home" references="homes(id)"/>
+            </column>
+            <column name="level" type="INT UNSIGNED" defaultValue="1">
+                <constraints nullable="false"/>
+            </column>
+            <column name="strength" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dexterity" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="intelligence" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="faith" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vitality" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="endurance" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="inventory_id" type="UNSIGNED INT">
+                <constraints nullable="false" foreignKeyName="fk_inventory" references="inventories(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
